@@ -1,0 +1,65 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  width: 100%;
+  height: 80vh;
+  position: relative;
+  background-color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.6);
+}
+
+.container svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+
+.node text {
+  font: 12px sans-serif;
+}
+
+div.tooltip {
+  position: absolute;
+  text-align: center;
+  width: 110px;
+  padding: 10px;
+  font: 12px sans-serif;
+  background: lightsteelblue;
+  border: 0;
+  border-radius: 8px;
+  pointer-events: none;
+}
+
+@font-face {
+  font-family: "Pecita";
+  src: url("../assets/Pecita/Pecita.otf");
+  font-weight: 400;
+  font-style: normal;
+}
+
+h1,
+h2,
+h3 {
+  font-family: Pecita, sans-serif;
+  font-weight: 400;
+}
