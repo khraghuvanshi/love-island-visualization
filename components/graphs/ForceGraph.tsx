@@ -264,7 +264,7 @@ export const ForceGraph = () => {
   }, [width, height]);
 
   return (
-    <svg ref={svgRef} width="100%" height={height}>
+    <svg ref={svgRef} width="100%" height={height || 500}>
       {/* {data["nodes"].map((d, i) => (
         <circle cx={12 * i} cy={20} r={8} fill="red"></circle>
       ))} */}
@@ -308,7 +308,8 @@ export const ForceGraph = () => {
       <g
         transform={
           //@ts-ignore
-          `translate(${width - 200}, 0)`
+          // `translate(${width - 200}, 0)`
+          `translate(${width ? width - 200 : 0}, 0)`
         }
       >
         <rect width={160} height={260} x={0} fill={"#f7ffb0"}></rect>
