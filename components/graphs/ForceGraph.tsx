@@ -49,7 +49,9 @@ export const ForceGraph = () => {
     const svg = d3
       .select(svgRef.current)
       .attr("preserveAspectRatio", "none")
-      .attr("viewbox", [0, 0, width * 1.2, height * 1.2]);
+      // .attr("viewbox", [0, 0, width * 1.2, height * 1.2]);
+      .attr("viewBox", `0 0 ${width * 1.2} ${height * 1.2}`);
+
 
     const graph = d3.select(graphRef.current);
 
@@ -191,7 +193,7 @@ export const ForceGraph = () => {
 
     const clip = circles
       .append("clipPath")
-      .attr("id", (d) => `clipCircle`)
+      .attr("id", (d: unknown) => `clipCircle-${(d as nodeType).id}`)
       .append("circle")
       .attr("r", 16)
       .attr("transform", "translate(18,16)");
@@ -208,7 +210,8 @@ export const ForceGraph = () => {
       .attr("width", 36)
       .attr("height", 36)
       .attr("xlink:href", (d: any) => `/headshots/${d.image}`)
-      .attr("clip-path", `url(#clipCircle)`)
+      // .attr("clip-path",(d: any) => `url(#clipCircle-${d.id})`)
+      .attr("clip-path", (d: unknown) => `url(#clipCircle-${(d as nodeType).id})`)
       .attr("transform", "translate(-16,-16)");
 
     const texts = node
